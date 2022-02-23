@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag contains meta data of the page such as page title, links of the stylesheets, what kind of 
+webpage it is etc etc. -->
+
+<head>
+    <!-- meta tags are helpful in increasing accessibility of the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cooking website where varities of recipies are embedded.">
+    <meta name="author" content="Gulshan Ara Nawshin">
+    <meta name="keywords" content="Recipe">
+    <meta name="refresh" content="600">
+    <title>CookBook</title>
+
+    <!-- External stylesheets link
+        * one is for the header and footer styling (header.css)
+        * another one is for this page's styling (index.css)
+    -->
+    <link rel="stylesheet" href="styles/index.css" type="text/css">
+    <link rel="stylesheet" href="styles/header.css" type="text/css">
+
+    <!-- links for fonts and icons 
+        * used some font awesome icons. so font awesome cdn is added here.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- <body> tag contains the contents shown in the page.  -->
+
+<body>
+    <!-- This part is for the page header -->
+    <header>
+        <nav>
+            <!--nav tag defines that this part is a navigation menu -->
+            <!-- contains the logo image -->
+            <div class="logo">
+                <!-- a tag makes the logo image navigable. src attribute of img tag adds the image in the page. alt attribute makes the page accessible -->
+                <a href="index.html"><img src="images/logo.png" alt="logo of the page"></a>
+            </div>
+
+            <!-- The navigation menu
+                an unordered list where each list item contains links of other pages so that user can navigate easily. 
+            -->
+            <ul class="navItems">
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Menu icon for mobile view -->
+            <div class="menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <!-- a horizontal line -->
+        <div class="hr"></div>
+    </header>
+
+    <!-- main unique contents of the page -->
+    <main>
+        <!-- The <main> tag specifies the main content of a document. -->
+
+        <!-- This section draws a row in the page where some short details of the page is given as description and
+        an image is there to attract people. I used section tag as it's a semantic layout tag. and two article tag 
+        contains the descriptions. p tag is used for texts and img tag for image. alt attribute of the img tag makes
+        the webpage more accessible. -->
+        <section class="main-content">
+            <article class="description">
+                <!-- defines a block of independent self contained content-->
+                <h2>CookBook</h2>
+                <p>Welcome to CookBook! Here you will find the perfect recipe's of items you want to cook for your meal.
+                    You can get knowledge about spices by looking our blogs too. Converter will help you to convert
+                    between different
+                    units. Want to have a last time revision right before the war? The summarized recipe details will
+                    help you!<br> <!-- <br> makes a line break -->
+                    Have a great journey!
+                </p>
+                <a href="recipe.html">Explore Now &#8594;</a>
+                <!--Special character by html code-->
+            </article>
+            <article class="image">
+                <img src="images/rice.jpeg" alt="A plate of rice with peas is shown">
+            </article>
+        </section>
+
+        <!-- Featured section -->
+
+        <!-- This section contains 3 columns of articles. where each article contain some texts And
+        images and links which refer to other pages. -->
+        <section class="categories">
+
+            <!-- Article tag contains the contents displayed in one column. -->
+            <article class="col-3">
+                <!--As there are 3 columns  in the section so I set the class name as col-3.-->
+                <h2>Event Meals</h2>
+                <img src="images/bowl.jpeg" alt="An image of event meal like dohi bora">
+                <p>Be it a birthday or an occassion, special foods are must</p>
+                <form action="recipe.html">
+                    <!-- As we can't add links in the button tag, so I added <form> tag, whose action attribute contains the link.-->
+                    <button>View Details</button>
+                </form>
+            </article>
+
+            <article class="col-3">
+                <h2>Regular Meals</h2>
+                <img src="images/food.jpeg" alt="An image of regular meal">
+                <p>Why not take a look at the items you eat regularly!</p>
+                <form action="recipe.html">
+                    <button>View Details</button>
+                </form>
+            </article>
+
+            <article class="col-3">
+                <h2>Snacks</h2>
+                <img src="images/pizza.jpeg" alt="An image of pizza">
+                <p>Some spicy snacks are eaten by us daily!</p>
+                <form action="recipe.html">
+                    <button>View Details</button>
+                </form>
+            </article>
+
+        </section>
+    </main> <!-- This is the end of the unique contents of this page. -->
+
+    <footer>
+        <!-- Page footer starts here. -->
+
+        <!-- This section contains some icons which shows some texts on hover. so div tags are
+        used to determine each set of icons with corresponding tags. 
+
+        i tag is used for icon. span tag is used for showing inline texts along with icons -->
+        <section class="wrapper">
+            <div class="button left">
+                <div class="icon"><i class="fa fa-facebook-f"></i></div>
+                <span>Facebook</span>
+            </div>
+            <div class="button left">
+                <div class="icon"><i class="fa fa-twitter"></i></div>
+                <span>Twitter</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-instagram"></i></div>
+                <span>Instagram</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-youtube"></i></div>
+                <span>Youtube</span>
+            </div>
+        </section>
+    </footer>
+
+    <!-- javascript file for adding some functionality in the menu icon of the page header -->
+    <script src="JS/index.js"></script>
+</body>
+
+</html>

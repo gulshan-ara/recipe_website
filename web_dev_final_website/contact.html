@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag contains meta data of the page such as page title, links of the stylesheets, what kind of 
+webpage it is etc etc. -->
+
+<head>
+    <!-- meta tags are helpful in increasing accessibility of the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cooking website where varities of recipies are embedded.">
+    <meta name="author" content="Gulshan Ara Nawshin">
+    <meta name="keywords" content="Recipe">
+    <meta name="refresh" content="600">
+    <title>CookBook</title>
+
+    <!-- External stylesheets link
+        * one is for the header and footer styling (header.css)
+        * another one is for this page's styling (index.css)
+    -->
+    <link rel="stylesheet" href="styles/contact.css" type="text/css">
+    <link rel="stylesheet" href="styles/header.css" type="text/css">
+
+    <!-- links for fonts and icons 
+        * used some font awesome icons. so font awesome cdn is added here.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- <body> tag contains the contents shown in the page.  -->
+
+<body>
+    <!-- This part is for the page header -->
+    <header>
+        <nav>
+            <!--nav tag defines that this part is a navigation menu -->
+            <!-- contains the logo image -->
+            <div class="logo">
+                <!-- a tag makes the logo image navigable. src attribute of img tag adds the image in the page. alt attribute makes the page accessible -->
+                <a href="index.html"><img src="images/logo.png" alt="logo of the page"></a>
+            </div>
+
+            <!-- The navigation menu
+                an unordered list where each list item contains links of other pages so that user can navigate easily. 
+            -->
+            <ul class="navItems">
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Menu icon for mobile view -->
+            <div class="menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <!-- a horizontal line -->
+        <div class="hr"></div>
+    </header>
+
+
+    <!-- main contents of the page which are unique from other pages is written here  -->
+    <main>
+        <!-- This section depicts a converter. which has a selection box in it so that user can choose the units of conversio -->
+        <section class="converter-container">
+            <!-- a simple text to introduce the converter -->
+            <p>Tired of converting units while surfing recipes?? Check our converter here :</p>
+            <!-- the selection box for choosing units -->
+            <form>
+                <label>Choose unit :</label>
+                <!-- the select tag has an event listener. It calls a js function on change -->
+                <select name="Input" id="input" onchange="conversionBetweenUnits(this)">
+                    <!-- options of the selection box -->
+                    <option value="grams to pounds">Grams to Pounds</option>
+                    <option value="grams to cups">Grams to Cups</option>
+                    <option value="pounds to cups">Pounds to Cups</option>
+                    <option value="pounds to grams">Pounds to Grams</option>
+                    <option value="cups to grams">Cups to Grams</option>
+                    <option value="cups to pounds">Cups to Pounds</option>
+                </select>
+            </form>
+
+            <!-- After choosing the unit from the selection box a text will appear in the screen with two more input boxes. 
+            The codes for this part is written dynamically using javascript. So only the id is defined here so that we can write
+            dynamically -->
+            <div id="text"></div>
+
+            <!-- After giving input for the conversion, the output will appear only if the convert button is pressed.
+            Again this is written dynamically using javascript -->
+            <div id="output"></div>
+
+        </section>
+        <!--The converter section ends here.-->
+
+
+        <!-- A form for sending message is written here in this section -->
+        <section class="contact-form-container">
+            <!-- The form contains an image which is for making the form attractive -->
+            <div class="contact-image">
+                <img src="images/baking-prepareation.jpg"
+                    alt="an image of items which is needed in baking like eggs, flours.">
+            </div>
+            <!-- the actual contact form starts here which has 3 input fields and all of them are required -->
+            <article class="contact-form">
+                <!-- a simple heading in the form  -->
+                <h3>Send us message :</h3>
+                <!-- the form elements are written by using <form> tag. -->
+                <form>
+                    <input name="name" type="text" class="form-input" placeholder="Your name" required><br>
+                    <input name="email" type="email" class="form-input" placeholder="Your Email" required><br>
+                    <input name="message" class="form-input" placeholder="Write your message here!" required>
+                    <input type="submit" value="Send Message" class="form-input submit">
+                </form>
+            </article>
+        </section>
+    </main>
+    <!--The main content ends here. -->
+
+    <footer>
+        <!-- Page footer starts here. -->
+
+        <!-- This section contains some icons which shows some texts on hover. so div tags are
+        used to determine each set of icons with corresponding tags. 
+
+        i tag is used for icon. span tag is used for showing inline texts along with icons -->
+        <section class="wrapper">
+            <div class="button left">
+                <div class="icon"><i class="fa fa-facebook-f"></i></div>
+                <span>Facebook</span>
+            </div>
+            <div class="button left">
+                <div class="icon"><i class="fa fa-twitter"></i></div>
+                <span>Twitter</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-instagram"></i></div>
+                <span>Instagram</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-youtube"></i></div>
+                <span>Youtube</span>
+            </div>
+        </section>
+    </footer>
+
+
+    <!-- javascript file for interactive design of this page -->
+    <script src="JS/contact.js"></script>
+    <!-- javascript file for adding some functionality in the menu icon of the page header -->
+    <script src="JS/index.js"></script>
+</body>
+
+</html>

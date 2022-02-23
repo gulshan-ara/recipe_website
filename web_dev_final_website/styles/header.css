@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* The box-sizing property allows us to include the padding and border in an element's 
+    total width and height. If you set box-sizing: border-box; on an element, padding and 
+    border are included in the width and height */
+    box-sizing: border-box;
+    /* Makes the page black. */
+    background-color: #000;
+    /* Makes the texts white all over the page. */
+    color: #fff;
+}
+
+/* layout of the header declaration. contents will be shown in a row.*/
+
+nav {
+    margin: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* adding a simple animation in the navigation menu */
+
+.navItems {
+    animation: animateHeaderNav 2s ease;
+}
+
+/* Styling the links of the navItems here. removing decorations from the list style type
+setting the display property value to inline-block so that it displays in a row. */
+
+.navItems li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 50px;
+    /* Space between two links*/
+    font-size: 30px;
+    /* Increasing font sizes */
+    font-family: cursive;
+    /* displaying the text in cursive style. */
+    text-transform: uppercase;
+    /* displaying every letter in capital */
+}
+
+/* Removing the underline from the list items */
+
+.navItems li a {
+    text-decoration: none;
+}
+
+/* changing the text color of the link on hover */
+
+.navItems li a:hover {
+    color: lemonchiffon;
+}
+
+/* animatiing the logo */
+
+.logo {
+    animation: animateHeaderLogo 2s ease;
+}
+
+/* Hiding menu item from the wide screen (laptop) view */
+
+.menu {
+    font-size: 40px;
+    color: #fff;
+    display: none;
+    /* Not showing the item */
+    cursor: pointer;
+    /* draws a thumb on hover */
+}
+
+/* Styling the underline of the header */
+
+.hr {
+    background-color: #fff;
+    width: 100%;
+    /* Should cover the whole width of the screen*/
+    height: 2px;
+    /* the underline is displayed because of this height */
+    margin: 0 auto;
+    /* Positions the element in the center. */
+    animation: animateHeaderLine 1.5s ease-in-out;
+    /* Adding some animation in the line*/
+}
+
+/* this animation block is applied to the underline of the header. At the initial stage the line width will be 0.
+gradually it will reach to 100%.  */
+
+@keyframes animateHeaderLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* This animation block is applied to the navlinks. At the initial stage it remains 200% right of the actual position.
+gradually it will come to the actual position */
+
+@keyframes animateHeaderNav {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* This animation block is applied to the logo. At the initial stage it remains 200% top of the actual position.
+gradually it will come to the actual position */
+
+@keyframes animateHeaderLogo {
+    0% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* This animation is applied to the footer icons. it moves two icons from left to the actual position. */
+
+@keyframes animateLeft {
+    0% {
+        transform: translateX(-1000%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* This animation is applied to the footer icons. it moves two icons from right to the actual position. */
+
+@keyframes animateRight {
+    0% {
+        transform: translateX(1000%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* For styling the footer section very much inspired by this youtube tutorial
+https://www.youtube.com/watch?v=yU3giDe-N6c&t=320s&ab_channel=CodingNepal */
+/* style for the footer. The <footer> tag here is the grid container */
+footer {
+    display: grid; /* Sets the display as grid. */
+    height: 100%; 
+    width: 100%;
+    place-items: center;
+    margin-bottom: 5%;
+}
+
+/* Styles for the buttons */
+.wrapper .button {
+    /* Displays in a row */
+    display: inline-block;
+    /* setting the width and height of the icons */
+    height: 60px;
+    width: 60px;
+    /* setting the margin at left and right */
+    margin: 0 10px;
+    /* Hides the texts */
+    overflow: hidden;
+    /* giving an ellipse look */
+    border-radius: 80px;
+    /* a little shadow is added */
+    box-shadow: 2px 2px 2px 2px rgba(250, 250, 250, 0.2);
+    /* little animation on hover  */
+    transition: all 0.3s ease-out;
+    /* draws a thumb over the button on hover */
+    cursor: pointer;
+}
+
+/* changing the width of the button on hover */
+.wrapper .button:hover {
+    width: 200px;
+}
+
+.wrapper .button .icon {
+    /* displaying the icons */
+    display: inline-block;
+    /* setting the height and width of the icons */
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    /* placing the icons at the center */
+    line-height: 60px;
+}
+
+.wrapper .button .icon i {
+    /* increasing the icon size */
+    font-size: 30px;
+    line-height: 60px;
+}
+
+/* styling the texts attached with the icons */
+.wrapper .button span {
+    font-size: 30px;
+    /* making the text bold */
+    font-weight: 500; 
+    /* placing the text at the center */
+    line-height: 60px;
+}
+
+/* the left icons will animate from left */
+.left {
+    animation: animateLeft 2s ease-in-out;
+}
+
+/* the right icons will animate from right */
+.right {
+    animation: animateRight 2s ease-in-out;
+}
+
+/* Adding responsiveness */
+
+/* Mobile view */
+
+@media only screen and (max-width: 400px) {
+    /* redesigning the navigational menu for the mobile view */
+    .navItems {
+        /* will have the 30% of screen height */
+        height: 30vh;
+        /* position is set to fixed.  */
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        /* will display over other elements */
+        z-index: 10;
+        /* will display as column */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: top 1s ease;
+        /* hiding the items */
+        display: none;
+    }
+    /* styling the nav links here */
+    .navItems li {
+        /* the texts will have 50% width */
+        width: 50%;
+        margin: 5px 0;
+        text-align: center;
+        box-shadow: 0 10px 10px 0 rgba(250, 250, 250, 0.2);
+    }
+    /* showing the hamburger menu icon in the mobile view */
+    .menu {
+        display: block;
+    }
+    /* centering the logo */
+    .logo {
+        margin-left: 40px;
+    }
+}

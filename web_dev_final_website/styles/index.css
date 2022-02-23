@@ -1,0 +1,233 @@
+/* style for the main contents of the first page is written here. */
+
+/* I used flexbox layout model as the layout of the page. */
+
+/* Every content of the page will have the cursive font family.
+The box-sizing property allows us to include the padding and border in an element's 
+total width and height. If you set box-sizing: border-box; on an element, padding and 
+border are included in the width and height */
+
+* {
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+/* This is the wrapper class of the contents shown in the first section. So display type,
+align items type, margin and box shadow properties are assigned with values here. 
+
+As it's the wrapper so I defined it as the flex container. Thus used display: flex. 
+I want to give the section a shadow show used box-shadow property for that. 
+5% margin is added in all side of the section. Items are shown in the center of the page and 
+so the align-items property is used here. There will be space between the contents, so 
+justify-content is set to space-between. 
+Contents will be shown in a row and row should wrap the display screen, so flex-flow is 
+assigned with row wrap property.
+*/
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin: 5%;
+    box-shadow: 0px 10px 10px 10px rgba(250, 250, 250, 0.2);
+}
+
+/* This is one of the flex items of the previous flex container. It has 40% width.
+An animation named animateLeft is added in this item of the  flex container */
+
+.description {
+    flex-basis: 40%;
+    /* flex-basis works as the width property of the flexbox model layout. */
+    padding: 2%;
+    animation: animateLeft 2s ease-in-out;
+    margin-left: 5%;
+}
+
+/* The flex item has a heading so defining the custom font size of the headline*/
+
+.description h2 {
+    font-size: calc(0.5rem + 3vw + 1vh);
+}
+
+/* The flex item has some texts so defining the custom font size of the texts*/
+
+.description p {
+    font-size: 20px;
+}
+
+/* The flex item has a link. So adding some margin, padding, background color and box-shadows in the link */
+
+.description a {
+    margin-top: 20px;
+    padding: 0 20px;
+    font-size: 30px;
+    background-color: rgba(111, 173, 45, 0.5);
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 10px 10px 0 rgba(250, 250, 250, 0.2);
+}
+
+/* Changing the background color on hover of the link */
+
+.description a:hover {
+    background-color: rgba(111, 173, 45);
+}
+
+/* This is another flex item of the container which has equal width of the previous item
+And a different animation is added here too. */
+
+.image {
+    flex-basis: 40%;
+    animation: animateRight 2s ease-in-out;
+    margin-right: 5%;
+}
+
+/* The image flex  item contains an image. So the positioning of the images are done here */
+
+.image img {
+    padding: 5%;
+    /* An element with position: relative; is positioned relative to its normal position. 
+    Setting the top, right, bottom, and left properties of a relatively-positioned element
+    will cause it to be adjusted away from its normal position. */
+    position: relative;
+    top: 0;
+    left: 0;
+    /* Takes full width and height of the parent */
+    width: 100%;
+    height: 100%;
+    /* The object-fit property defines how an element responds to the height and width of its content box. 
+    cover : the image will fill the height and width of its box, once again maintaining its aspect 
+    ratio but often cropping the image in the process. */
+    object-fit: cover;
+}
+
+/* Another section of the page which is also declared as the flex container. It has
+5% margin all around and the display property is set to flex as it's a flex container.
+the items of this container has space around it, and the items are positioned in the center. */
+
+.categories {
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Flex items of the .categories container. */
+
+.col-3 {
+    flex-basis: 30%;
+    /* 30% width of the entire width is taken by this item. */
+    border-radius: 10px;
+    /* Borders are curved by 10px. */
+    box-shadow: 10px 10px 10px 0 rgba(250, 250, 250, 0.2);
+    /* The shadow is generated*/
+    animation: animateBottom 2s ease-in-out;
+    /* An animation is added .*/
+}
+
+/* The headline of the flex item is placed center of the parent item. it has a large font size and a bottom margin */
+
+.col-3 h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* The image element of the flex item is styled here. It'll have full width of the parent element. and 5% padding all around */
+
+.col-3 img {
+    display: block;
+    width: 100%;
+    padding: 5%;
+}
+
+/* The texts are styled here. positioned in the center. */
+
+.col-3 p {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* the button is designed here. it has the 50% width of the parent element. there will be a shadow is under the button */
+
+.col-3 button {
+    margin: 20px 100px;
+    width: 50%;
+    font-size: 20px;
+    font-family: cursive;
+    box-shadow: 5px 5px 5px 0 rgba(250, 250, 250, 0.2);
+}
+
+/* the button will move up 10 px while hovering over it. */
+
+.col-3 button:hover {
+    transform: translateY(-10px);
+}
+
+/* Keyframes changes state of properties from one position to another. Thus the animation generates. */
+
+@keyframes animateLeft {
+    0% {
+        /* at the start of the animation the X position of the element stays 200% left from the actual position  */
+        transform: translateX(-200%);
+    }
+    100% {
+        /* at the end of the animation it comes back to the actual position */
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateRight {
+    0% {
+        /* at the start of the animation the X position of the element stays 200% right from the actual position  */
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateBottom {
+    0% {
+        /* at the start of the animation the Y position of the element stays 200% bottom from the actual position  */
+        transform: translateY(200%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Adding responsiveness for the mobile view. Here I implemented responsiveness only for screens which are maximum 400px wide */
+
+@media only screen and (max-width: 400px) {
+    .main-content {
+        /* As we have a smaller screen size now, so moved the elements in vertical view from horizontal view */
+        flex-flow: column wrap;
+        /* Displays elements vertically */
+    }
+    /* The image will be displayed on top of the section. */
+    .image {
+        order: -1;
+    }
+    /* the texts will now have 90% width of the screen */
+    .description {
+        margin: 5%;
+        flex-basis: 90%;
+        text-align: center;
+    }
+    /* The font size of the headline is now smaller as the screen width has been decreased */
+    .description h2 {
+        font-size: 35px;
+    }
+    /* The articles or block of elements will now have 95% width of the screen and 15% margin on the top */
+    .col-3 {
+        flex-basis: 95%;
+        margin-top: 15%;
+    }
+    /* For centering the buttons increased the left margin size */
+    .col-3 button {
+        margin-left: 70px;
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag contains meta data of the page such as page title, links of the stylesheets, what kind of 
+webpage it is etc etc. -->
+
+<head>
+    <!-- meta tags are helpful in increasing accessibility of the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cooking website where varities of recipies are embedded.">
+    <meta name="author" content="Gulshan Ara Nawshin">
+    <meta name="keywords" content="Recipe">
+    <meta name="refresh" content="600">
+    <title>CookBook</title>
+
+    <!-- External stylesheets link
+        * one is for the header and footer styling (header.css)
+        * another one is for this page's styling (index.css)
+    -->
+    <link rel="stylesheet" href="styles/gallery.css" type="text/css">
+    <link rel="stylesheet" href="styles/header.css" type="text/css">
+
+    <!-- links for fonts and icons 
+        * used some font awesome icons. so font awesome cdn is added here.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- <body> tag contains the contents shown in the page.  -->
+
+<body>
+    <!-- This part is for the page header -->
+    <header>
+        <nav>
+            <!--nav tag defines that this part is a navigation menu -->
+            <!-- contains the logo image -->
+            <div class="logo">
+                <!-- a tag makes the logo image navigable. src attribute of img tag adds the image in the page. alt attribute makes the page accessible -->
+                <a href="index.html"><img src="images/logo.png" alt="logo of the page"></a>
+            </div>
+
+            <!-- The navigation menu
+                an unordered list where each list item contains links of other pages so that user can navigate easily. 
+            -->
+            <ul class="navItems">
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Menu icon for mobile view -->
+            <div class="menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <!-- a horizontal line -->
+        <div class="hr"></div>
+    </header>
+
+    <!-- Unique contents of the page has been added here -->
+    <main>
+        <!-- page headline -->
+        <h1>Some items made by the viewers</h1>
+
+        <!-- this <section> reperesents  some buttons by clicking which we can filter the images of the gallery -->
+        <section class="button-container">
+            <!-- an unordered list for storing the buttons -->
+            <ul class="buttons">
+                <li class="list active" data-filter="All">All</li>
+                <li class="list" data-filter="Cake">Cake</li>
+                <li class="list" data-filter="Pizza">Pizza</li>
+                <li class="list" data-filter="Rice">Rice</li>
+                <li class="list" data-filter="Curry">Curry</li>
+                <li class="list" data-filter="Snacks">Snacks</li>
+            </ul>
+        </section>
+
+        <!-- this <article> represents the gallery items. the <img> contains image paths. the alt attributes makes the page accessible -->
+        <article class="items">
+            <div class="item Cake"><img src="images/images_gallery/chocolate-cake.jpg" alt="an image of chocolate cake">
+            </div>
+            <div class="item Pizza"><img src="images/images_gallery/pan_pizza.jpeg" alt="an image of pan pizza"></div>
+            <div class="item Curry"><img src="images/images_gallery/lentil.jpeg" alt="an image of lentil curry"></div>
+            <div class="item Snacks"><img src="images/images_gallery/burger.jpeg" alt="an image of burger"></div>
+            <div class="item Cake"><img src="images/images_gallery/cupcakes.jpeg" alt="an image of cup cakes"></div>
+            <div class="item Curry"><img src="images/images_gallery/chicken_curry.jpeg"
+                    alt=" an image of chicken curry"></div>
+            <div class="item Pizza"><img src="images/images_gallery/pizza.jpg" alt="an image of a pizza"></div>
+            <div class="item Rice"><img src="images/images_gallery/rice.jpeg"
+                    alt="a rice plate containing rice with peas"></div>
+            <div class="item Cake"><img src="images/images_gallery/lime-cake.jpg" alt="an image of a lime cake"></div>
+            <div class="item Snacks"><img src="images/images_gallery/pakora.jpeg" alt="a pakora bowl"></div>
+            <div class="item Curry"><img src="images/images_gallery/beef_curry.jpeg" alt="a beef curry bowl"></div>
+            <div class="item Cake"><img src="images/images_gallery/strawberry_cake.jpeg"
+                    alt="an image of strawberry cake"></div>
+            <div class="item Snacks"><img src="images/images_gallery/porota.jpeg" alt="an image of a porota"></div>
+            <div class="item Cake"><img src="images/images_gallery/cream_cake.jpeg"
+                    alt="an image of finely decorated cream cake"></div>
+            <div class="item Snacks"><img src="images/images_gallery/sandwich.jpeg" alt="a sandwich"></div>
+            <div class="item Cake"><img src="images/images_gallery/double_layer_cake.jpeg"
+                    alt="a double layer chocolate cake"></div>
+            <div class="item Snacks"><img src="images/images_gallery/smoothie.jpeg" alt="an image of a smoothie jar">
+            </div>
+            <div class="item Pizza"><img src="images/images_gallery/pizza_1.jpeg" alt="an image of a pizza"></div>
+            <div class="item Snacks"><img src="images/images_gallery/chicken_fry.jpeg" alt="an image of chicken fries">
+            </div>
+            <div class="item Pizza"><img src="images/images_gallery/veg_pizza.jpeg" alt="an image of veg pizza"></div>
+        </article>
+    </main>
+
+    <footer>
+        <!-- Page footer starts here. -->
+
+        <!-- This section contains some icons which shows some texts on hover. so div tags are
+        used to determine each set of icons with corresponding tags. 
+
+        i tag is used for icon. span tag is used for showing inline texts along with icons -->
+        <section class="wrapper">
+            <div class="button left">
+                <div class="icon"><i class="fa fa-facebook-f"></i></div>
+                <span>Facebook</span>
+            </div>
+            <div class="button left">
+                <div class="icon"><i class="fa fa-twitter"></i></div>
+                <span>Twitter</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-instagram"></i></div>
+                <span>Instagram</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-youtube"></i></div>
+                <span>Youtube</span>
+            </div>
+        </section>
+    </footer>
+
+    <!-- javascript file for adding some functionality in the menu icon of the page header -->
+    <script src="JS/index.js"></script>
+
+    <!-- jquery cdn for some functions -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <!-- javascript file for interactive design of this page -->
+    <script src="JS/gallery.js"></script>
+
+</body>
+
+</html>

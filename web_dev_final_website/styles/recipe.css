@@ -1,0 +1,164 @@
+/* The box-sizing property allows us to include the padding and border in an element's 
+total width and height. If you set box-sizing: border-box; on an element, padding and 
+border are included in the width and height */
+
+* {
+    box-sizing: border-box;
+}
+
+/* the main container of the page will have 5% margin all around and it will have cursive font-family */
+
+.main-container {
+    margin: 5%;
+    padding: auto;
+    font-family: cursive;
+    /* all texts will be aligned center */
+    text-align: center;
+}
+
+/* the headline's font size is 30px */
+
+h1 {
+    font-size: 30px;
+}
+
+/* The search bar will have 40% of the screens width */
+
+.search-box {
+    width: 40%;
+    background: #fff;
+    height: 3vw;
+    /* the height of the bar is 3% of the screen width */
+    padding: 1%;
+    font-size: 25px;
+    color: #000;
+    margin: 5% 0;
+}
+
+/* the font size of the search icon is 24px */
+
+.search-icon {
+    font-size: 24px;
+    border: 1px solid #fff;
+    padding: 1px;
+}
+
+/* Setting the recipe container as flex container. items will be shown in the row direction */
+
+.recipe-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    /* items will have space around them. */
+    align-items: center;
+}
+
+/* flex items */
+
+.recipe-content {
+    flex: 28%;
+    /* 28% width of the container for each item */
+    padding: 2%;
+    margin: 2%;
+    font-size: 25px;
+    /* max-height of each item is 475px */
+    max-height: 475px;
+    box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.2);
+    margin-bottom: 5%;
+}
+
+/* The button will have 40% width of the items width */
+
+.recipe-content button {
+    width: 40%;
+    font-size: 20px;
+    padding: 1%;
+    font-family: cursive;
+    margin-top: 2%;
+}
+
+/* the modal is 80% wide of the screen */
+
+.modal {
+    width: 80%;
+    margin: 5%;
+    padding: 2%;
+    font-size: 30px;
+    /* the modal is scrollable in the y direction */
+    overflow-y: scroll;
+    height: 450px;
+    box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.2);
+    /* the modal's position is fixed */
+    position: fixed;
+    /* the modal will be shown on top of other elements */
+    z-index: 1;
+}
+
+/* the font size of the modal's headline is set here */
+
+.modal h2 {
+    font-size: 35px;
+}
+
+/* the video will have 60% of the modal's  width  and 300px height */
+
+.modal-video {
+    width: 60%;
+    height: 300px;
+    margin: 2% 20%;
+}
+
+/* The close button of the modal is styled here */
+.modal span {
+    /* the close button is set to the right corner of the modal */
+    float: right;
+    font-size: 30px;
+}
+
+/* the text is styled here */
+.sorry-msg {
+    /* all letters will be capital  */
+    text-transform: uppercase;
+    font-size: 25px;
+    /* for positioning the text to the center used margin left */
+    margin-left: 29%;
+}
+
+
+/* Adding responsiveness for the mobile view */
+
+@media only screen and (max-width: 400px) {
+
+    /* the search box will have 60% width of the screen and the height will be equal to 10% width of the screen */
+    .search-box {
+        height: 10vw;
+        width: 60%;
+    }
+
+    /* the flex item of .recipe-container will have 10% of screen width as bottom margin */
+    .recipe-content {
+        margin-bottom: 10vw;
+    }
+
+    /* the modal height is increased and font size is decreased here */
+    .modal {
+        height: 450px;
+        font-size: 20px;
+    }
+    /* the size of the headline of the modal is decreased */
+    .modal h2 {
+        font-size: 30px;
+    }
+
+    /* the width and height of the modal video is increased */
+    .modal-video {
+        width: 80%;
+        height: 350px;
+        margin: 2% 10%;
+    }
+
+    /* the sorry text is positioned at the center */
+    .sorry-msg {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,156 @@
+/* The box-sizing property allows us to include the padding and border in an element's 
+total width and height. If you set box-sizing: border-box; on an element, padding and 
+border are included in the width and height */
+
+* {
+    box-sizing: border-box;
+}
+
+/* The .converter-container classname represents a section. The margin and padding are added 
+and texts are positioned at center and the font-family is set to cursive */
+
+.converter-container {
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+/* these style set are applied to <select> and <input> tags.
+the width, margin, padding and font-size are set here.  */
+
+select, input {
+    font-family: cursive;
+    font-size: 25px;
+    width: 20%;
+    margin: 2%;
+    padding: 1%;
+    position: relative;
+}
+
+/* This styleset is for the output text. It has monospace font family with a bottom border. */
+
+#output {
+    font-family: monospace;
+    font-size: 30px;
+    margin: 2%;
+    padding: 2%;
+    border-bottom: 1px solid #fff;
+}
+
+/* .contact-form-container classname represents a section which contains a form with image */
+
+.contact-form-container {
+    margin: 5%;
+    display: flex;
+    /* As it's a flex container so the display is set to flex */
+    justify-content: center;
+    /* The items are centered */
+    align-items: center;
+    box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.2);
+    /* The section has a shadow */
+    font-family: cursive;
+    text-align: center;
+    /* Texts are aligned at center. */
+}
+
+/* contact-image class represents an image. */
+
+.contact-image {
+    flex: 45%;
+    /* takes up 45% width of the container. */
+    /* The position is set to relative. it has e defined width and height */
+    position: relative;
+    width: 400px;
+    height: 400px;
+    animation: animateImage 2s ease-in-out;
+    /* An animation is added here. */
+}
+
+/* styling the image element */
+
+.contact-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* takes the full height and width of the parent */
+    width: 100%;
+    height: 100%;
+    /* The object-fit property defines how an element responds to the height and width of its content box. 
+    cover : the image will fill the height and width of its box, once again maintaining its aspect 
+    ratio but often cropping the image in the process. */
+    object-fit: cover;
+}
+
+/* Style for the form element */
+
+.contact-form {
+    flex: 45%;
+    /* takes up 45% width of the parent*/
+    padding: 5%;
+    animation: animateForm 2s ease-in-out;
+    /* an animation is added */
+}
+
+/* Styling the input boxes here */
+
+.form-input {
+    width: 80%;
+    background: #fff;
+    /* background color of the input box is set to white */
+    color: #000;
+    /* Text color is set to black */
+    font-size: 20px;
+    /* text fonts are 20px. */
+}
+
+.submit {
+    width: 50%;
+    /* the submit button takes up 50% of the parent width. */
+}
+
+/* Keyframes generates animation */
+
+@keyframes animateForm {
+    /* at the initial state, the x position of the element stays at 150% right from the actual position */
+    0% {
+        transform: translateX(150%);
+    }
+    /* at the final state, the x position comes to the actual position */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animateImage {
+    /* at the initial state, the x position of the element stays at 150% left from the actual position */
+    0% {
+        transform: translateX(-150%);
+    }
+    /* at the final state, the x position comes to the actual position */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Adding responsiveness for the mobile view. Here I implemented responsiveness only for screens which are maximum 400px wide */
+
+@media only screen and (max-width: 400px) {
+    /* making the font sizes smaller */
+    .converter-container, select, input, #output {
+        font-size: 20px;
+    }
+    /* making the font-size smaller for texts */
+    .converter-container p {
+        font-size: 25px;
+    }
+    /* reducing the width of <select> and <input> tag */
+    select, input {
+        width: 40%;
+    }
+    /* hiding the contact form image  */
+    .contact-image {
+        display: none;
+    }
+}

@@ -1,0 +1,79 @@
+/* cursive font-family is added. box-sizing is set to border-box */
+
+* {
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+/* margin is set to 10% in top and bottom and 5% in left and right for every .blog section */
+
+.blog {
+    margin: 10% 5%;
+}
+
+/* styled the headlines of every article. headlines are positioned at center */
+
+.blog h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+/* the flex container, items are displayed as column. a border radius and box shadow is also added */
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 2%;
+    box-shadow: 0 10px 10px 0 rgba(250, 250, 250, 0.2);
+    border-radius: 10px;
+}
+
+/* the text items of the container. 
+texts are aligned in the center with 2% margin and padding in left and right  */
+
+.description {
+    font-size: 20px;
+    margin: 0 2%;
+    padding: 0 2%;
+    text-align: center;
+}
+
+/* the buttons of the container. the width is set to 40%. a box shadow is also added here */
+
+.btn {
+    width: 40%;
+    padding: 2% 5%;
+    margin-top: 3%;
+    box-shadow: 0 10px 10px 0 rgba(250, 250, 250, 0.2);
+    outline: none;
+    font-size: 20px;
+}
+
+/* Responsiveness for laptop view where minimum width is 401px */
+
+@media only screen and (min-width: 401px) {
+    /* items are displayed as row */
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-flow: row wrap;
+    }
+    /* text items width are set to 30% of the parent width */
+    .description {
+        font-size: 25px;
+        margin: 1%;
+        flex: 30%;
+    }
+    /* btn width is 40% of the parent element's width */
+    .btn {
+        width: 40%;
+        font-size: 25px;
+        padding: 1%;
+    }
+    /* pulling out the images in right */
+    .Garlic, .Onion {
+        order: 2;
+    }
+}

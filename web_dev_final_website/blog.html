@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag contains meta data of the page such as page title, links of the stylesheets, what kind of 
+webpage it is etc etc. -->
+
+<head>
+    <!-- meta tags are helpful in increasing accessibility of the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cooking website where varities of recipies are embedded.">
+    <meta name="author" content="Gulshan Ara Nawshin">
+    <meta name="keywords" content="Recipe">
+    <meta name="refresh" content="600">
+    <title>CookBook</title>
+
+    <!-- External stylesheets link
+        * one is for the header and footer styling (header.css)
+        * another one is for this page's styling (index.css)
+    -->
+    <link rel="stylesheet" href="styles/blog.css" type="text/css">
+    <link rel="stylesheet" href="styles/header.css" type="text/css">
+
+    <!-- links for fonts and icons 
+        * used some font awesome icons. so font awesome cdn is added here.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- <body> tag contains the contents shown in the page.  -->
+
+<body>
+    <!-- This part is for the page header -->
+    <header>
+        <nav>
+            <!--nav tag defines that this part is a navigation menu -->
+            <!-- contains the logo image -->
+            <div class="logo">
+                <!-- a tag makes the logo image navigable. src attribute of img tag adds the image in the page. alt attribute makes the page accessible -->
+                <a href="index.html"><img src="images/logo.png" alt="logo of the page"></a>
+            </div>
+
+            <!-- The navigation menu
+                an unordered list where each list item contains links of other pages so that user can navigate easily. 
+            -->
+            <ul class="navItems">
+                <li><a href="recipe.html">Recipe</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Menu icon for mobile view -->
+            <div class="menu">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <!-- a horizontal line -->
+        <div class="hr"></div>
+    </header>
+
+
+    <!-- The unique contents of the page -->
+    <main>
+        <!-- This section contains information about a spice. it contains some texts, wikipedia links and an image -->
+        <section class="blog">
+            <!-- article name -->
+            <h1 class="item-name">Garlic</h1>
+            <!-- flex conatianer of the image and texts -->
+            <article class="container">
+                <!-- First flex item -->
+                <div class="image-container Garlic">
+                    <!-- The <picture> element contains one or more <source> elements, each referring to different 
+                        images through the srcset attribute. This way the browser can choose the image that best fits
+                        the current view and/or device.
+                        Each <source> element has a media attribute that defines when the image is the most suitable.-->
+                    <picture>
+                        <source media="(min-width:401px)" srcset="images/garlic.jpg">
+                        <img src="images/garlic_small.jpg" alt="An image of garlics">
+                    </picture>
+                </div>
+                <!-- second flex item -->
+                <div class="description">
+                    <h2>Importance of Garlic:</h2>
+                    <p>Garlic is highly nutritious and it has very few calories. It can combat sickness
+                        including common cold. Garlic can reduce blood pressure. It improves cholesterol levels
+                        which helps in lowering the risk of heart diseas. Eating garlicks may help in detoxifying
+                        heavy metals in the body. Garlic may help in living longer.
+                        <!-- Courtesy :
+                            https://www.healthline.com/nutrition/11-proven-health-benefits-of-garlic#TOC_TITLE_HDR_10 -->
+                    </p>
+                    <!-- wikipedia link attached in the button. so used a <form> tag for adding the link with the button -->
+                    <form action="https://en.wikipedia.org/wiki/Garlic">
+                        <button class="btn">Learn More</button>
+                    </form>
+                </div>
+            </article>
+        </section>
+
+        <!-- This section contains information about a spice. it contains some texts, wikipedia links and an image -->
+        <section class="blog">
+            <h1 class="item-name">Ginger</h1>
+            <article class="container">
+                <div class="image-container Ginger">
+                    <picture>
+                        <source media="(min-width:401px)" srcset="images/ginger.jpg">
+                        <img src="images/ginger_small.jpg" alt="An image of garlics">
+                    </picture>
+                </div>
+                <div class="description">
+                    <h2>Importance of Ginger:</h2>
+                    <p>Ginger, one of the most commonly used spice in Asia, contains gingerol, which
+                        has been used to aid digestion, reduce nausea, helping in fighting with flu and
+                        common cold. It may help with weight loss too. And it may significantly reduce
+                        menustrual pain. It contains substance that may help in cancer prevention.
+                        <!-- Courtesy :
+                            https://www.healthline.com/nutrition/11-proven-benefits-of-ginger#9.-Contains-a-substance-that-may-help-prevent-cancer -->
+                    </p>
+                    <form action="https://en.wikipedia.org/wiki/Ginger">
+                        <button class="btn">Learn More</button>
+                    </form>
+                </div>
+            </article>
+        </section>
+
+        <!-- This section contains information about a spice. it contains some texts, wikipedia links and an image -->
+        <section class="blog">
+            <h1 class="item-name">Onion</h1>
+            <article class="container">
+                <div class="image-container Onion">
+                    <picture>
+                        <source media="(min-width:401px)" srcset="images/onion.jpeg">
+                        <img src="images/onion_small.jpeg" alt="An image of garlics">
+                    </picture>
+                </div>
+                <div class="description">
+                    <h2>Importance of Onion:</h2>
+                    <p>Onions are low in calories yet high in nutrients, including vitamin C, B and potassium.
+                        Eating onions may help reduce heart disease risk factors, such as high blood pressure,
+                        elevated triglyceride levels and inflammation. Onions are loaded with Antioxidants. Onion
+                        contains Cancer-fighting compounds.
+                        <!-- Courtesy :
+                            https://www.healthline.com/nutrition/11-proven-benefits-of-ginger#9.-Contains-a-substance-that-may-help-prevent-cancer -->
+                    </p>
+                    <form action="https://en.wikipedia.org/wiki/Onion">
+                        <button class="btn">Learn More</button>
+                    </form>
+
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <!-- Page footer starts here. -->
+
+        <!-- This section contains some icons which shows some texts on hover. so div tags are
+        used to determine each set of icons with corresponding tags. 
+
+        i tag is used for icon. span tag is used for showing inline texts along with icons -->
+        <section class="wrapper">
+            <div class="button left">
+                <div class="icon"><i class="fa fa-facebook-f"></i></div>
+                <span>Facebook</span>
+            </div>
+            <div class="button left">
+                <div class="icon"><i class="fa fa-twitter"></i></div>
+                <span>Twitter</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-instagram"></i></div>
+                <span>Instagram</span>
+            </div>
+            <div class="button right">
+                <div class="icon"><i class="fa fa-youtube"></i></div>
+                <span>Youtube</span>
+            </div>
+        </section>
+    </footer>
+</body>
+
+<!-- javascript file for adding some functionality in the menu icon of the page header -->
+<script src="JS/index.js"></script>
+
+</html>

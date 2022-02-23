@@ -1,0 +1,101 @@
+/* For styling the gallery very much inspired by this youtube tutorial
+https://www.youtube.com/watch?v=ZjrqnxDEkzA&t=388s&ab_channel=OnlineTutorials */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* The box-sizing property allows us to include the padding and border in an element's 
+    total width and height. If you set box-sizing: border-box; on an element, padding and 
+    border are included in the width and height */
+    box-sizing: border-box;
+    /* setting cursive font family for the whole page */
+    font-family: cursive;
+}
+
+/* styling the headline of the page */
+
+h1 {
+    margin: 5%;
+    text-align: center;
+    /* adding an underline at the headline */
+    text-decoration: underline;
+}
+
+/* adding margin and padding in the button conatainer */
+
+.button-container {
+    padding: 1% 4%;
+    margin: 2%;
+}
+
+/* setting display property value to flex for the buttons */
+
+.button-container .buttons {
+    display: flex;
+    justify-content: space-around;
+    /* There will be spaces around the buttons. */
+    margin-bottom: 1%;
+}
+
+/* Adding styles in the list items of the button */
+
+.button-container .buttons .list {
+    list-style: none;
+    /* No decoration for the list items */
+    padding: 1% 3%;
+    margin: 1%;
+    cursor: pointer;
+    /* The letter-spacing property increases or decreases the space between characters in a text.  */
+    letter-spacing: 1px;
+    background: lightslategray;
+}
+
+/* the active class holder button will have a different background color */
+
+.button-container .buttons .list.active {
+    background: lightgreen;
+    color: #000;
+}
+
+/* Setting the display property of the image container to flex. it will display in the row direction */
+
+.items {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 2% 4%;
+}
+
+/* Setting width and height of the image container */
+
+.items .item {
+    position: relative;
+    width: 262px;
+    height: 250px;
+    margin: 2%;
+}
+
+/* The images will have 100% area of the container and the image will fit in the container */
+
+.items .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Adding responsiveness for the mobile view */
+
+@media only screen and (max-width: 400px) {
+    /* decrasing the padding of the buttons */
+    .button-container .buttons .list {
+        padding: 8px;
+    }
+    /* setting width of the images according to the screen width */
+    .items .item {
+        width: 355px;
+        margin-left: 2%;
+        margin-bottom: 10vw;
+    }
+}
